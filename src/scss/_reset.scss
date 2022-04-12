@@ -1,0 +1,53 @@
+@use 'vars' as *;
+
+* {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      text-decoration: none;
+      box-sizing: border-box;
+      transition: all 0.35s;
+}
+body {
+      font-family: $font-family;
+}
+li,
+button,
+a {
+      cursor: pointer;
+}
+// Mixins for media queries__
+@mixin mq($breakpoint) {
+      @media (max-width: $breakpoint) {
+            @content;
+      }
+}
+// Mixin for buttons__
+@mixin button($width, $height) {
+      width: $width;
+      height: $height;
+      background: $moderate-cyan;
+      color: $white;
+      border-radius: $height / 2;
+      font-weight: 700;
+      font-size: 15px;
+      outline: none;
+      border: none;
+      &:hover {
+            background: $dark-cyan;
+      }
+}
+// Mixin for checkboxes__
+@mixin checkbox {
+      width: 1em;
+      height: 1em;
+      border-radius: 1em;
+      position: absolute;
+      background: $moderate-cyan;
+      left: 2em;
+      top: 2em;
+      cursor: pointer;
+      // Js changes this__
+      opacity: 0;
+      @content;
+}

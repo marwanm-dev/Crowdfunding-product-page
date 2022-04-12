@@ -1,0 +1,676 @@
+// _____Imported files______
+@use 'vars' as *;
+@use 'reset' as *;
+
+// _____START NAVIGATION_____
+.navigation {
+  background: url(../../images/image-hero-desktop.jpg);
+  width: 100%;
+  height: 60vh;
+  background: {
+    size: cover;
+    repeat: no-repeat;
+  }
+  box-shadow: 0 0 50em 0em $black inset;
+}
+nav {
+  position: relative;
+  width: 100%;
+  height: 7.5vh;
+  img {
+    position: absolute;
+    bottom: 0;
+    left: 4em;
+    @include mq($mq_m) {
+      position: relative;
+      display: block;
+      margin: 0 auto;
+      top: 3em;
+      left: 0;
+    }
+  }
+  ul {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    right: 4em;
+    @include mq($mq_m) {
+      width: 50%;
+      position: relative;
+      display: block;
+      margin: 0 auto;
+      top: 7em;
+      right: 0;
+    }
+    li {
+      margin-right: 2em;
+      @include mq($mq_m) {
+        display: flex;
+        justify-content: center;
+        margin: {
+          right: 0;
+          top: 2.5em;
+        }
+      }
+      a {
+        color: $white;
+      }
+      &:hover a {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// _____END NAVIGATION_____
+// _____START PROJECT HEADER_____
+
+.project-header {
+  width: 1000px;
+  height: 500px;
+  background: $white;
+  border-radius: 12px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  top: -10em;
+  @include mq($mq_xl) {
+    width: 750px;
+  }
+  @include mq($mq_l) {
+    width: 650px;
+    height: 600px;
+  }
+  @include mq($mq_m) {
+    width: 500px;
+    height: 800px;
+  }
+  @include mq($mq_s) {
+    width: 350px;
+    height: 850px;
+  }
+  a {
+    position: relative;
+    top: -1.5em;
+  }
+  .title {
+    @include mq($mq_m) {
+      font-size: 12px;
+    }
+    @include mq($mq_s) {
+      padding: 1em 2em;
+    }
+  }
+  p {
+    margin-top: 1em;
+  }
+}
+
+// _____END PROJECT HEADER_____
+// _____START PROJECT MIDDLE_____
+
+.project-middle {
+  margin-top: 6em;
+  position: relative;
+  button {
+    position: absolute;
+    left: 5em;
+    top: 0;
+    @include button(240px, 70px);
+    @include mq($mq_xl) {
+      @include button(200px, 55px);
+    }
+    @include mq($mq_l) {
+      @include button(200px, 50px);
+    }
+    @include mq($mq_m) {
+      left: 12.5%;
+      @include button(75%, 55px);
+    }
+  }
+  .bookmark {
+    position: absolute;
+    right: 5em;
+    top: 0;
+    width: 175px;
+    height: 55px;
+    border-radius: 30px;
+    background: $light-gray;
+    cursor: pointer;
+    @include mq($mq_xl) {
+      width: 150px;
+      height: 50px;
+    }
+    @include mq($mq_l) {
+      width: 150px;
+      height: 60px;
+    }
+    @include mq($mq_m) {
+      width: 75%;
+      height: 55px;
+      top: 100px;
+      right: 12.5%;
+    }
+    p {
+      font-weight: 700;
+      margin-left: 4em;
+      @include mq($mq_xl) {
+        margin-left: 3.5em;
+      }
+      @include mq($mq_l) {
+        margin-left: 0;
+        margin-top: 1.5em;
+      }
+      @include mq($mq_m) {
+        letter-spacing: 0.75em;
+      }
+    }
+    .img-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 55px;
+      height: 56px;
+      @include mq($mq_xl) {
+        top: -0.25em;
+        width: 56px;
+        height: 56px;
+      }
+      @include mq($mq_l) {
+        top: -35px;
+        left: 45px;
+      }
+      @include mq($mq_m) {
+        left: 42.5%;
+      }
+      @include mq($mq_s) {
+        left: 40%;
+      }
+    }
+  }
+}
+
+// _____END PROJECT MIDDLE_____
+// _____START STATISTICS_____
+
+.stats {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  .numbers {
+    display: flex;
+    justify-content: space-evenly;
+    width: 85%;
+    @include mq($mq_xl) {
+      width: 100%;
+    }
+    @include mq($mq_m) {
+      flex-direction: column;
+    }
+    .col {
+      @include mq($mq_m) {
+        margin-bottom: 25px;
+      }
+      h1 {
+        font-size: 40px;
+      }
+      p {
+        margin-top: 0.5em;
+        color: $dark-gray;
+      }
+    }
+    .col:nth-of-type(2),
+    .col:nth-of-type(3) {
+      padding-left: 25px;
+      border-left: 1px solid $light-gray;
+      @include mq($mq_xl) {
+        padding-left: 15px;
+      }
+      @include mq($mq_m) {
+        border-left: 0;
+      }
+    }
+  }
+  .load-bar {
+    width: 90%;
+    height: 10px;
+    background: $light-gray;
+    margin: 0 auto;
+    margin-top: 3em;
+    border-radius: 10px;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      width: 85%;
+      height: 10px;
+      border-radius: 10px;
+      background: $moderate-cyan;
+      left: 0;
+    }
+  }
+}
+
+// _____END STATISTICS_____
+// _____START ABOUT_____
+
+.about {
+  text-align: left;
+  display: block;
+  width: 1000px;
+  margin: 0 auto;
+  @include mq($mq_xl) {
+    width: 750px;
+  }
+  @include mq($mq_l) {
+    width: 650px;
+  }
+  @include mq($mq_m) {
+    width: 450px;
+  }
+  @include mq($mq_s) {
+    width: 350px;
+  }
+  p {
+    margin-top: 1.5em;
+    line-height: 1.8rem;
+    color: $dark-gray;
+  }
+}
+
+// ____END ABOUT_____
+// _____START PROJECT TYPES_____
+
+.project-types {
+  width: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+  margin: 0 auto;
+  margin-top: 5em;
+  @include mq($mq_xl) {
+    width: 650px;
+  }
+  @include mq($mq_l) {
+    width: 550px;
+  }
+  @include mq($mq_m) {
+    width: 400px;
+  }
+  @include mq($mq_s) {
+    width: 300px;
+  }
+
+  .item {
+    width: 100%;
+    height: 30%;
+    border-radius: 10px;
+    border: 1px solid $light-gray;
+    padding: 2em 1em 1em 3em;
+    margin: 0 auto;
+    @include mq($mq_m) {
+      height: 50%;
+    }
+    @include mq($mq_s) {
+      height: 200%;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      p {
+        color: $moderate-cyan;
+      }
+    }
+    .description {
+      margin-top: 3em;
+      @include mq($mq_m) {
+        margin-top: 2em;
+      }
+      p {
+        color: $dark-gray;
+      }
+    }
+    .info {
+      margin-top: 3em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @include mq($mq_m) {
+        margin-top: 3em;
+      }
+      .amount {
+        font-weight: 500;
+        font-size: 30px;
+        font-weight: 700;
+        sup {
+          font-size: 15px;
+          color: $dark-gray;
+        }
+      }
+      .reward {
+        width: 200px;
+        height: 60px;
+        border-radius: 30px;
+        background: $moderate-cyan;
+        color: $white;
+        text-align: center;
+        padding-top: 1.2em;
+        cursor: pointer;
+        font-weight: 700;
+        @include mq($mq_l) {
+          width: 175px;
+          height: 50px;
+          padding-top: 1em;
+        }
+        @include mq($mq_m) {
+          height: 40px;
+          padding-top: 0.45em;
+        }
+        @include mq($mq_s) {
+          padding-top: 0.5em;
+        }
+        &:hover {
+          background: $dark-cyan;
+        }
+      }
+    }
+  }
+  .out-of-stock {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+//  modal ( its the black background with opacity to make focus on the content of the modal)
+// _____END PROJECT TYPES_____
+// _____START MODAL_____
+.modal {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -30%);
+  width: 100%;
+  height: 400vh;
+  // Js changes this
+  display: none;
+  // _____END MODAL_____
+  // _____START MODAL CONTENT_____
+
+  .modal-content {
+    width: 1000px;
+    height: 1350px;
+    background: $white;
+    padding: 3em;
+    border-radius: 15px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    // Js changes this
+    display: none;
+    @include mq($mq_xl) {
+      width: 825px;
+    }
+    @include mq($mq_l) {
+      width: 650px;
+    }
+    @include mq($mq_m) {
+      width: 500px;
+      height: 1500px;
+    }
+    @include mq($mq_s) {
+      width: 350px;
+      height: 1600px;
+    }
+    .header {
+      h2 {
+        margin-bottom: 0.5em;
+      }
+      p {
+        color: $dark-gray;
+      }
+      img {
+        position: absolute;
+        top: 2em;
+        right: 2em;
+        cursor: pointer;
+      }
+    }
+    .product-types {
+      margin-top: 5em;
+      .no-reward {
+        .minimal-content {
+          .check-box {
+            @include checkbox;
+          }
+          h3 {
+            margin-top: 0.25em;
+            cursor: pointer;
+            &:hover {
+              color: $moderate-cyan;
+            }
+          }
+          p {
+            margin-top: 2em;
+            color: $dark-gray;
+            line-height: 1.75em;
+            @include mq($mq_s) {
+              line-height: 1em;
+            }
+          }
+        }
+      }
+      .product {
+        width: 90%;
+        margin: 0 auto;
+        border: 1px solid $light-gray;
+        padding: 1.5em 4em;
+        border-radius: 15px;
+        margin-top: 3em;
+        // 200px => 300px
+        height: 200px;
+        position: relative;
+        overflow: hidden;
+        @include mq($mq_m) {
+          height: 225px;
+        }
+        @include mq($mq_s) {
+          height: 225px;
+          padding: 1.4em 2em;
+          width: 100%;
+        }
+        .prod-content {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .check-box {
+            @include checkbox {
+              left: 0.5em;
+            }
+          }
+          h3 {
+            cursor: pointer;
+            &:hover {
+              color: $moderate-cyan;
+            }
+            p {
+              color: $moderate-cyan;
+              font-size: 15px;
+              margin-left: 1em;
+              display: inline-block;
+              @include mq($mq_xl) {
+                margin-left: 0.25em;
+              }
+            }
+          }
+          h2 {
+            font-weight: 700;
+            font-size: 25px;
+            sup {
+              font-weight: 400;
+              color: $dark-gray;
+            }
+          }
+        }
+        .description {
+          margin-top: 1em;
+          color: $dark-gray;
+          line-height: 1.75em;
+          @include mq($mq_m) {
+            margin-top: 0.5em;
+            line-height: 1.25em;
+          }
+          @include mq($mq_s) {
+            margin-top: 0.2em;
+            line-height: 1.15em;
+          }
+        }
+        .selected {
+          margin-top: 5em;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          @include mq($mq_l) {
+            margin-top: 2.5em;
+          }
+          @include mq($mq_m) {
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 1.5em;
+          }
+          @include mq($mq_s) {
+            flex-direction: column;
+            justify-content: center;
+            margin-top: 1.25em;
+          }
+          p {
+            color: $dark-gray;
+          }
+          input {
+            width: 120px;
+            height: 40px;
+            border: 1px solid $light-gray;
+            margin-left: 21em;
+            padding-left: 1em;
+            @include mq($mq_xl) {
+              margin-left: 10em;
+            }
+            @include mq($mq_l) {
+              margin-left: 1em;
+            }
+            @include mq($mq_m) {
+              margin-right: 0.75em;
+            }
+            @include mq($mq_s) {
+              width: 150px;
+              height: 25px;
+              margin-top: 1em;
+            }
+          }
+          button {
+            margin-right: -3em;
+            @include button(150px, 60px);
+            @include mq($mq_xl) {
+              margin-left: 2em;
+            }
+            @include mq($mq_l) {
+              margin-left: auto;
+              @include button(125px, 50px);
+            }
+            @include mq($mq_m) {
+              @include button(135px, 30px);
+            }
+            @include mq($mq_s) {
+              @include button(150px, 25px);
+              margin: 1em auto;
+            }
+          }
+        }
+      }
+    }
+    .disabled-prod {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+}
+
+// _____END MODAL CONTENT_____
+// _____START SUCCESS MODAL_____
+
+.success-modal-content {
+  width: 750px;
+  height: 450px;
+  background: $white;
+  position: absolute;
+  left: 50%;
+  top: 35%;
+  transform: translate(-50%, -35%);
+  text-align: center;
+  border-radius: 15px;
+  // Js changes this
+  display: none;
+  @include mq($mq_l) {
+    width: 650px;
+    height: 500px;
+  }
+  @include mq($mq_m) {
+    width: 500px;
+    height: 550px;
+  }
+  @include mq($mq_s) {
+    width: 350px;
+    height: 650px;
+  }
+  img {
+    margin-top: 3em;
+    width: 7em;
+    @include mq($mq_m) {
+      margin-top: 4em;
+    }
+  }
+  h1 {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+  }
+  p {
+    width: 70%;
+    color: $dark-gray;
+    display: block;
+    margin: 0 auto;
+    @include mq($mq_m) {
+      margin-top: 1em;
+      line-height: 1.75em;
+    }
+    @include mq($mq_s) {
+      margin-bottom: 1em;
+    }
+  }
+
+  button {
+    margin-top: 1em;
+    @include button(150px, 50px);
+  }
+}
+
+// _____END SUCCESS MODAL_____
+// _____START ANIMATED CLASSES_____
+
+// For icon
+.unbookmarked {
+  background: url(../../images/icon-bookmark.svg);
+}
+.bookmarked {
+  background: url(../../images/icon-bookmarked.svg);
+}
+// For paragraph
+.unactivated {
+  color: $dark-gray;
+}
+.activated {
+  color: $moderate-cyan;
+}
+
+// _____END ANIMATED CLASSES_____
