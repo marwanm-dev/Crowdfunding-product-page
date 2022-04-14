@@ -1,4 +1,4 @@
-# ${project-name}
+# Crowdfunding-product-page
 
 - Fully responsive & animated
 
@@ -7,14 +7,10 @@
   Sass
   Javascript
 
-# Features
-
--
-
 # Live
 
-- https://marodevv-${project-name}.pages.dev/
+- https://marodevv-crowdfunding-product-page.pages.dev/
 
 # Credit
 
-- Inspired by ${Name}
+- Inspired by Frontend Mentor
