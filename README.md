@@ -9,7 +9,7 @@
 
 # Live
 
-- https://marodevv-crowdfunding-product-page.pages.dev/
+- https://marodevv-crowdfunding-product-page.vercel.app
 
 # Credit
 
