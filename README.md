@@ -10,7 +10,7 @@
 
 ## Live
 
-> https://marodevv-crowdfunding-product-page.vercel.app
+> https://marwanmodev-crowdfunding-product-page.vercel.app
 
 ## Credit
 
